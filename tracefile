@@ -1,0 +1,8 @@
+store 0x34ab00 2 19ab
+load 0x34ab00 2
+load 0x34ab00 2
+store 0x34ab02 2 2bcd
+load 0x34ab02 2
+load 0x0a1730 2
+load 0x34ab00 4
+load 0x0a1730 4

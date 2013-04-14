@@ -1,0 +1,19 @@
+README
+Carlos Reyes
+
+There are two ways to run my cachesim after navigating to the source directory and the tracefile.
+
+1. Compile and run in terminal
+
+Example:
+javac CachesimEngine.java
+java CachesimEngine tracefile 2 4 8
+
+2. Run .jar file in terminal
+*Note my .jar file is called cachesim.jar
+
+Example:
+java -jar cachesim.jar tracefile 2 4 8
+
+*Other Note: When I made the jar file in eclipse it passed me an error "JAR export finished with
+warnings, see console for details" however it hasn't seemed to cause any problems.
