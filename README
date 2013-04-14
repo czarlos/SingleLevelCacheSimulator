@@ -1,19 +1,34 @@
 README
-Carlos Reyes
+Author: Carlos Reyes
 
-There are two ways to run my cachesim after navigating to the source directory and the tracefile.
+This is a simple cache simulator implemented in Java, its purpose is to show you what happens in a cache
+when a given set of instructions are fed in, for each instruction there is a corresponding output that
+tells the user what the result of the instruction was.
 
-1. Compile and run in terminal
+Compile and run in terminal
 
-Example:
 javac CachesimEngine.java
-java CachesimEngine tracefile 2 4 8
+java CachesimEngine filename x y z
 
-2. Run .jar file in terminal
-*Note my .jar file is called cachesim.jar
+Where x should be replaced by size of cache in MB (ex 2 => 2MB)
+Where y should be replaced by the associativity (ex 4 => 4 way set associative)
+Where z should be the size of each block in bytes (ex 8 => 8-byte blocks)
 
-Example:
-java -jar cachesim.jar tracefile 2 4 8
+Notes: The replacement policy is LRU, the size of each address is 24-bits, cache is write-through
+no allocate, see below for the input file format.
 
-*Other Note: When I made the jar file in eclipse it passed me an error "JAR export finished with
-warnings, see console for details" however it hasn't seemed to cause any problems.
+Input file format:
+
+instruction hex-adress size (data)
+
+Example file:
+
+store 0x34ab00 2 19ab
+store 0x34ab02 2 18cd
+load 0x34ab00 4
+store 0x3aab00 2 19dd
+store 0x3aab02 2 18bb
+load 0x3aab00 4
+store 0x34ab00 2 19ab
+store 0x34ab02 2 18cd
+load 0x34ab00 8
